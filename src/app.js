@@ -9,5 +9,9 @@ app.use(
     credentials: true,
   })
 );
+app.use(express.json({ limit: "21kb" }));
+app.use(express.urlencoded({ extended: true, limit: "21kb" }));
+app.use(express.static("public"));
+app.use(cookieParser());
 
 export { app };
